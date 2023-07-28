@@ -149,7 +149,7 @@
                                                 <mat-select placeholder="Document Type" [(ngModel)] = "karigarform.document_type" #document_type="ngModel" name="document_type" required>
                                                     <mat-option value ="PanCard" >Pan Card</mat-option>
                                                     <mat-option value ="VoterCard">Voter Card</mat-option>
-                                                    <mat-option value ="Adharcard">Aadhaar Card</mat-option>
+                                                    <mat-option value ="Aadharcard">Aadhaar Card</mat-option>
                                                 </mat-select>
                                             </mat-form-field>
                                         </div>
@@ -182,7 +182,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col s12"  *ngIf="karigarform.document_type == 'Adharcard'">
+                                <div class="col s12"  *ngIf="karigarform.document_type == 'Aadharcard'">
                                     <div class="option-field">
                                         <div class="control-field">
                                             <mat-form-field class="cs-input">
@@ -207,7 +207,7 @@
                                                 <div class="cs-file file-up pl0">
                                                     <label>
                                                         <input type="file" (change)="onUploadChange($event)" style="display:none;" accept=".png, .jpg, .jpeg, .pdf"  />
-                                            <img  [src]="docId ? uploadUrl+karigarform.document_image : karigarform.document_image" alt="" id="img" *ngIf="karigarform.document_image != null">
+                                                         <img  [src]="docId ? uploadUrl+karigarform.document_image : karigarform.document_image" alt="" id="img" *ngIf="karigarform.document_image != null">
                                                         <i class="material-icons add-file-icon" >add</i>
                                                     </label>
                                                 </div>
@@ -265,28 +265,50 @@
                             </div>
                             
                             <div class="row option-field">
-                                <div class="col s4 ">
+                                <div class="col s6 ">
                                     <div class="control-field">
                                         <mat-form-field class="cs-input">
-                                            <input matInput placeholder="Counter Name" name="parent_counter_name" [(ngModel)] = "karigarform.parent_counter_name" #parent_counter_name="ngModel" >
+                                            <input matInput placeholder="Shop Name" name="parent_counter_name" [(ngModel)] = "karigarform.parent_counter_name" #parent_counter_name="ngModel" required>
                                         </mat-form-field>  
                                     </div>
                                 </div>
-                                <div class="col s4">
+                                <div class="col s6">
                                     <div class="control-field">
                                         <mat-form-field class="cs-input">
                                             <input matInput placeholder="Contact Person" name="parent_counter_contact_person" [(ngModel)] = "karigarform.parent_counter_contact_person" #parent_counter_contact_person="ngModel" >
                                         </mat-form-field>  
                                     </div>
                                 </div>
-                                <div class="col s4">
+                                <div class="col s6">
                                     <div class="control-field">
                                         <mat-form-field class="cs-input">
                                             <input matInput placeholder="Mobile No." name="parent_counter_mobile" [(ngModel)] = "karigarform.parent_counter_mobile" #parent_counter_mobile="ngModel"  maxlength="10" minlength="10" (keypress)="numeric_Number($event)" >
                                         </mat-form-field>  
                                     </div>
-                                </div>
+                                 </div>
+                                 <div class="col s6 ">
+                                    <div class="control-field">
+                                        <mat-form-field class="cs-input">
+                                            <input matInput placeholder="Shop Area" name="parent_counter_area" [(ngModel)] = "karigarform.parent_counter_area" #parent_counter_area="ngModel">
+                                        </mat-form-field>  
+                                    </div>
+                                 </div>
+
+
+
                             </div>
+                            <div class="col s6">
+                                <div class="cs-file">
+                                  <p>Upload Image</p>
+                                   <div class="cs-file file-up pl0">
+                                    <label>
+                                     <input type="file" (change)="onUploadChangeShop($event)" style="display:none;" accept=".png, .jpg, .jpeg, .pdf"  />
+                                      <img  [src]="docIdshop ? uploadUrl+karigarform.parent_counter_shop_image : karigarform.parent_counter_shop_image" alt="" id="img" *ngIf="karigarform.parent_counter_shop_image != null">
+                                      <i class="material-icons add-file-icon" >add</i>
+                                    </label>
+                                </div>
+                             </div>
+                         </div>
                         </div>
                     </div>
                 </div>

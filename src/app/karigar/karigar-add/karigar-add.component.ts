@@ -24,6 +24,7 @@ export class KarigarAddComponent implements OnInit {
     uploadUrl:any='';
     docId:any;
     docIds:any;
+    docIdshop:any;
     
     
     constructor(public db: DatabaseService, private route: ActivatedRoute, private router: Router, public ses: SessionStorage,public matDialog: MatDialog,  public dialog: DialogComponent) { this.date1 = new Date();}
@@ -35,6 +36,8 @@ export class KarigarAddComponent implements OnInit {
 
             this.docId = params['karigar_id'];
             this.docIds = params['karigar_id'];
+            this.docIdshop = params['karigar_id'];
+
             
             if (this.karigar_id)
             {
@@ -200,12 +203,16 @@ export class KarigarAddComponent implements OnInit {
             reader.onload = this.handleReaderLoaded.bind(this);
             reader.readAsBinaryString(file);
             this.docId = '';
+            
         }
     }
     handleReaderLoaded(e) {
         this.karigarform.document_image = 'data:image/png;base64,' + btoa(e.target.result) ;
         console.log( this.karigarform.document_image );
+
     }
+   
+    
     selectSales()
     {
         this.karigarform.sales_mobile = this.sales_users.filter( x => x.id === this.karigarform.sales_user )[0].phone;
@@ -232,5 +239,19 @@ export class KarigarAddComponent implements OnInit {
     }
     handleReaderLoaded2(e) {
         this.karigarform.document_image_back = 'data:image/png;base64,' + btoa(e.target.result) ;
+    }
+
+    onUploadChangeShop(evt: any){
+        const file = evt.target.files[0];
+        console.log(file);
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = this.handleReaderLoaded3.bind(this);
+            reader.readAsBinaryString(file);
+            this.docIdshop = '';
+        }      
+    }
+    handleReaderLoaded3(e) {
+        this.karigarform.parent_counter_shop_image = 'data:image/png;base64,' + btoa(e.target.result) ;
     }
 }

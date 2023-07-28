@@ -17,6 +17,8 @@ export class KarigarListComponent implements OnInit {
     
     loading_list = true;
     karigars: any = [];
+    
+    Karigarbig: any=[]
     total_karigars = 0;
     karigar_all:any =0;
     
@@ -123,7 +125,15 @@ export class KarigarListComponent implements OnInit {
         this.db.post_rqst(  {'filter': this.filter , 'login':this.db.datauser,user_type:"1"}, 'karigar/karigarList?page=' + this.current_page)
         .subscribe( d => {
             this.loading_list = false;
-            console.log(d);            
+
+    
+            console.log(d);
+            this.Karigarbig = d.karigars.data
+            console.log(this.Karigarbig);
+            
+            
+        
+
             this.current_page = d.karigars.current_page;
             this.last_page = d.karigars.last_page;
             this.total_karigars =d.karigars.total;

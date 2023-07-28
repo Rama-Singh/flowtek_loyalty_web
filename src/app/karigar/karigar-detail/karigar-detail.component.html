@@ -171,19 +171,22 @@
         </div>
         
         <div class="row">
-            <div class="col s6">
+            <div class="col s8">
                 <div class="sprate-box gift-offer">
                     <div class="full-offer">
                         <div class="top-heading">
                             <h2> DELEAR DETAIL</h2>
                         </div>
                         <div class="detail-info pl0 pr0">
+                            <div class="img-box">
+                                <img [src]="uploadUrl + getData.parent_counter_shop_image " (click)="openDialog(uploadUrl + getData.parent_counter_shop_image)">
+                            </div>
                             
                             <div class="basic-details">
                                 <div class="profile-info">
                                     <ul>
                                         <li>
-                                            <p>Counter Name</p>
+                                            <p>Shop Name</p>
                                             <span>{{!getData.parent_counter_name?'N/A':getData.parent_counter_name | titlecase }}</span>
                                         </li>
                                         
@@ -194,6 +197,10 @@
                                         <li>
                                             <p>Mobile No.</p>
                                             <span>{{!getData.parent_counter_mobile ? 'N/A' : getData.parent_counter_mobile}}</span>
+                                        </li>
+                                        <li>
+                                            <p>Shop Area</p>
+                                            <span>{{!getData.parent_counter_area ? 'N/A' : getData.parent_counter_area}}</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -239,7 +246,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col s6  ">
+            <div class="col s4  ">
                 <div class="sprate-box gift-offer">
                     <div class="full-offer">
                         <div class="top-heading">

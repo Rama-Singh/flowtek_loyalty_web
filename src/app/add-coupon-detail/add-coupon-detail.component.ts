@@ -87,7 +87,7 @@ export class AddCouponDetailComponent implements OnInit {
         // this.filter.date = this.filter.date  ? this.db.pickerFormat(this.filter.date) : '';
       //  console.log("coupon list is come");
        this.db.post_rqst({'id':this.coupon_id},'app_master/coupon_details').subscribe(r=>{
-         // console.log(r);
+         console.log(r);
          this.print_coupon=r['coupons'];
          console.log(this.print_coupon);
        })

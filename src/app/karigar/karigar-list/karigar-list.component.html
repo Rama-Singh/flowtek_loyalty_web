@@ -91,7 +91,7 @@
                             <th class="w100">Mobile</th>
                             <th class="w135">State</th>
                             <th class="w135">District</th>
-                            <th class="w150">Dealer</th>
+                            <th class="w150">Counter Name</th>
                             <th class="w150">Dealer Contact</th>
                             <th class="w150 text-center">
                                 <div class="ml0">
@@ -188,11 +188,11 @@
     </div>   
     
     
-    <div class="css-table" *ngIf="karigars.length">
+    <div class="css-table" *ngIf="Karigarbig.length">
         <div class="table-container">
             <div class="table-body">
                 <table>
-                    <tr *ngFor="let val of karigars; let i = index">
+                    <tr *ngFor="let val of Karigarbig; let i = index">
                         <td class="w30 text-center" style="border-right: 0px !important;"><mat-checkbox name="checked" [(ngModel)]="val.checked" (change)="select_item($event,i)"></mat-checkbox></td>
                         <td class="w30">{{ ( (current_page - 1 ) * 20 ) + ( i+1 ) }}</td>
                         <td class="w150">
