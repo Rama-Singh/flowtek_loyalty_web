@@ -74,7 +74,7 @@ export class AddCouponDetailComponent implements OnInit {
         </head>
         <body onload="window.print();window.close()">${printContents}</body>
         </html>`
-        );
+        ); 
         
         popupWin.document.close();
       }
