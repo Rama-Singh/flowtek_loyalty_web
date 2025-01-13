@@ -33,7 +33,7 @@
                                 <div class="col s3">
                                     <div class="control-field">
                                         <mat-form-field class="cs-input">
-                                            <input placeholder="D.O.B" class="h46" [(ngModel)]="karigarform.dob" (click)="openDatePicker(picker)" [max]="date1" name="dob" matInput  [matDatepicker]="picker"  readonly>
+                                            <input placeholder="D.O.B" class="h46" [(ngModel)]="karigarform.dob" (click)="openDatePicker(picker)" [max]="date1" name="dob" matInput  [matDatepicker]="picker"  readonly required>
                                             <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
                                             <mat-datepicker #picker></mat-datepicker>
                                         </mat-form-field>  
@@ -275,21 +275,21 @@
                                 <div class="col s6">
                                     <div class="control-field">
                                         <mat-form-field class="cs-input">
-                                            <input matInput placeholder="Contact Person" name="parent_counter_contact_person" [(ngModel)] = "karigarform.parent_counter_contact_person" #parent_counter_contact_person="ngModel" >
+                                            <input matInput placeholder="Contact Person" name="parent_counter_contact_person" [(ngModel)] = "karigarform.parent_counter_contact_person" #parent_counter_contact_person="ngModel" required>
                                         </mat-form-field>  
                                     </div>
                                 </div>
                                 <div class="col s6">
                                     <div class="control-field">
                                         <mat-form-field class="cs-input">
-                                            <input matInput placeholder="Mobile No." name="parent_counter_mobile" [(ngModel)] = "karigarform.parent_counter_mobile" #parent_counter_mobile="ngModel"  maxlength="10" minlength="10" (keypress)="numeric_Number($event)" >
+                                            <input matInput placeholder="Mobile No." name="parent_counter_mobile" [(ngModel)] = "karigarform.parent_counter_mobile" #parent_counter_mobile="ngModel"  maxlength="10" minlength="10" (keypress)="numeric_Number($event)" required>
                                         </mat-form-field>  
                                     </div>
                                  </div>
                                  <div class="col s6 ">
                                     <div class="control-field">
                                         <mat-form-field class="cs-input">
-                                            <input matInput placeholder="Shop Area" name="parent_counter_area" [(ngModel)] = "karigarform.parent_counter_area" #parent_counter_area="ngModel">
+                                            <input matInput placeholder="Shop Area" name="parent_counter_area" [(ngModel)] = "karigarform.parent_counter_area" #parent_counter_area="ngModel" required>
                                         </mat-form-field>  
                                     </div>
                                  </div>
